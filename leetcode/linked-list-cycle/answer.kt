@@ -8,6 +8,7 @@
  * }
  */
 
+
 class Solution {
     fun hasCycle(head: ListNode?): Boolean {
         head ?: return false
