@@ -18,19 +18,17 @@ public class Main {
 
         for (int i = 0; i < N; i++) {
             boolean[] visited = new boolean[N];
-
             ArrayDeque<Integer> q = new ArrayDeque<>();
             q.offer(i);
-            visited[i] = true;
 
-            while(!q.isEmpty()) {
+            while (!q.isEmpty()) {
                 int cur = q.poll();
-                graph[i][cur] = 1;
 
-                for (int j=0; j<N; j++) {
-                    if(graph[cur][j] == 1 && !visited[j]) {
+                for (int j = 0; j < N; j++) {
+                    if (graph[cur][j] == 1 && !visited[j]) {
                         q.offer(j);
                         visited[j] = true;
+                        graph[i][j] = 1;
                     }
                 }
             }
